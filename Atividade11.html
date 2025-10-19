@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form action="">
+
+        <div>
+            <label for="">nome</label>
+           <input type="text" id="nome">
+        </div>
+
+        <div>
+            <label for="">email</label>
+           <input type="text" id="email">
+        </div>
+
+        <div>
+            <label for="">senha</label>
+           <input type="text" id="senha">
+        </div>
+
+        <div>
+            <label for="">confirmação senha</label>
+           <input type="text" id="confirmacao">
+        </div>
+        
+        <div>
+            <label for=""></label>
+           <input type="submit" id="enviar">
+        </div>
+
+        <script>
+
+            let formulario = document.querySelector('form')
+
+            let nome = document.querySelector('#nome').value
+            let email = document.querySelector('#email').value
+            let senha = document.querySelector('#senha').value
+            let confirmacao = document.querySelector('#confirmacao').value
+
+            formulario.addEventListener('submit', (evento)=> {
+
+                mensagem.innertext = ""
+
+                evento.preventDefault()
+
+                if (nome.length < 3) {
+                    
+                    mensagem.innertext = 'O nome precisa ter ao menos três caracter'
+                    return
+                    
+                }
+
+                const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+                if (!emailRegex.test(email)) {
+
+                    mensagem.innertext = 'informe um email valido'
+                    
+                }
+
+                const senhaRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+                if (!emailRegex.test(senha)) {
+
+                    mensagem.innertext = 'informe um email valido'
+            }
+                const confirmacaoRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+                if (!emailRegex.test(confirmacao)) {
+
+                    mensagem.innertext = 'informe um email valido'
+            }
+        )
+
+
+        </script>
+
+    </form>
+</body>
+</html>
